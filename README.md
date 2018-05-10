@@ -1,1 +1,1 @@
-# Processing images
+# Image deblurring
