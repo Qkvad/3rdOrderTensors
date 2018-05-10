@@ -5,6 +5,6 @@ function [C] = tubalScalarMul (A, B)
   for i=1:n
     for j=1:n
       C(mod(i+j-2,n)+1) += A(i) * B(j);
-    endfor
-  endfor
-endfunction
+    end
+  end
+end

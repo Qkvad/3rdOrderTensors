@@ -7,7 +7,7 @@ function [C] = tproduct (A, B)
     for j=1:m
       for k=1:p
         C(i,j,:) += tubalScalarMul(A(i,k,:),B(k,j,:));
-      endfor
-    endfor
-  endfor
-endfunction
+      end
+    end
+  end
+end

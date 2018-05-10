@@ -7,6 +7,6 @@ function [C] = tproduct_fft (A, B)
   C1 = zeros(l,m,n);
   for i=1:n
     C1(:,:,i)=A1(:,:,i)*B1(:,:,i);
-  endfor
+  end
   C = ifft(C1,[],3);
-endfunction
+end
