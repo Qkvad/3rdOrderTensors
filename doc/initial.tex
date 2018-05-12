@@ -1,0 +1,137 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside]{article}
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Title $\bullet$ May 2018} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+\usepackage{multicol}
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{float}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{Title} % Article title
+
+\author{%
+\textsc{Ivan \v{C}eh}\\% \\[1ex] 
+\normalsize Computer Science \\
+\normalsize \href{mailto:cehmail@gmail.com}{cehmail@gmail.com} 
+\and
+\textsc{Petra Br\v{c}i\'c}\\% \\[1ex] 
+\normalsize Applied Mathematics \\
+\normalsize \href{mailto:petrabrcic94@gmail.com}{petrabrcic94@gmail.com} 
+\and
+\textsc{Sandro Lovni\v{c}ki}\\% \\[1ex] 
+\normalsize Computer Science \\ 
+\normalsize \href{mailto:lovnicki.sandro@gmail.com}{lovnicki.sandro@gmail.com}
+}
+
+\date{\today} 
+\renewcommand{\maketitlehookd}{%
+\noindent \textbf{\\Abstract:}
+
+%\\\\
+\textbf{Keywords:}
+}
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title and table of contents
+\maketitle
+%\tableofcontents
+%\newpage
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+\begin{multicols}{2}
+
+\section{Introduction}
+In this...
+
+\section{Methods}
+There are...
+
+
+%------------------------------------------------
+
+\section{Models}
+In this section...
+
+\subsection{Subsection}
+Based on...
+
+
+\section{Application}
+As we could have seen in...
+
+
+%------------------------------------------------
+
+\section{Results and future}
+As a result of our investigation...
+
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99}
+
+\bibitem[Kilmer, Braman, Hao]{kbh}
+MISHA E. KILMER, KAREN BRAMAN, AND NING HAO.
+\newblock THIRD ORDER TENSORS AS OPERATORS ON MATRICES: A
+THEORETICAL AND COMPUTATIONAL FRAMEWORK WITH
+APPLICATIONS IN IMAGING
+ 
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{multicols}{2}
+\end{document}
