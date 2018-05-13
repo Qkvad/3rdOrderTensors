@@ -1,6 +1,6 @@
 function [tcirc] = circ(T)
-  [l,m,n] = size(T);
-  
+  %creates circular block-column matrix from tensors frontal slices as blocks
+  [l,m,n] = size(T);  
   for k=1:n
     for col=1:n
       shift    = (col-1)*l;
