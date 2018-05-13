@@ -139,7 +139,7 @@ In order to define tensor multiplication, we now present some conversions betwee
 \subsection{Tensor Operators}
 Now, with established notation and conversions, we are equipped to define needed tensor operators.
 
-\begin{defn} Let $\mathcal{A} \in \mathbb{R}^{l \times p \times n}$ and $\mathcal{B} \in \mathbb{R}^{p \times m \times n}$. The t-product $\mathcal{A} \ast \mathcal{B}$\footnote{our Octave implementation of t-product is called \code{tproduct}.} is a $l \times m \times n$ tensor defined as
+\begin{defn} Let $\mathcal{A} \in \mathbb{R}^{l \times p \times n}$ and $\mathcal{B} \in \mathbb{R}^{p \times m \times n}$. The t-product\footnote{our Octave implementation of t-product is called \code{tproduct}.} $\mathcal{A} \ast \mathcal{B}$ is a $l \times m \times n$ tensor defined as
 \[ \mathcal{A} \ast \mathcal{B} := \code{foldn}(\code{circ}(\mathcal{A}) \cdot \code{matvec}(\mathcal{B}) ,n) \]
 \end{defn}
 
