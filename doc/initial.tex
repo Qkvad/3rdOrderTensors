@@ -70,10 +70,10 @@
 
 \date{\today} 
 \renewcommand{\maketitlehookd}{%
-\noindent \textbf{\\Abstract:}
-
-%\\\\
-\textbf{Keywords:}
+\noindent \textbf{\\Abstract:} Operations with tensors, or multiway arrays, have become increasingly prevalent in recent years. Traditionally, tensors are represented or decomposed as a sum of rank-1 outer products, but in this paper we explore an alternate representation of tensors which shows promise with respect to the tensor approximation problem. We also discuss implications for extending basic algorithms such as the power method, QR iteration, and Krylov subspace methods. To conclude, we present two applications of this theoretical framework; image deblurring and face recognition.
+~
+\\\\
+\textbf{Keywords:} tensor, deblurring, face recognition.
 }
 
 
@@ -92,29 +92,28 @@
 \begin{multicols}{2}
 
 \section{Introduction}
-In this...
+A tensor is a multi-dimensional array of numbers. For example, we could say that vector $v \in \mathbb{R}^{n_1}$ is a first-order tensor and similarily, matrix $M \in \mathbb{R}^{n_1 \times n_2}$ is a second-order tensor. Therefore, a third-order tensor is $\mathcal{A} \in \mathbb{R}^{n_1 \times n_2 \times n_3}$.\\
+\indent In this paper, we provide a setting in which the familiar tools of linear algebra can be extended to better understand third-order tensors. Significant contributions to extending matrix analysis has been made in the works of Misha E. Kilmer and others in \cite{kilmer-braman-hao} and \cite{kilmer-martin}.\\
+\indent In sections that follow, we first introduce the basic notions and definitions of this new framework. We present methods which will be used in applictions and continue with two examples (image deblurring and face recognition), showing our implementation in Octave and human-readable results.
 
-\section{Methods}
+\section{Theoretical Framework}
 There are...
 
 
 %------------------------------------------------
 
-\section{Models}
+\section{Image Deblurring}
 In this section...
 
 \subsection{Subsection}
 Based on...
 
 
-\section{Application}
+\section{Face Recognition}
 As we could have seen in...
 
 
 %------------------------------------------------
-
-\section{Results and future}
-As a result of our investigation...
 
 
 %----------------------------------------------------------------------------------------
@@ -123,11 +122,15 @@ As a result of our investigation...
 
 \begin{thebibliography}{99}
 
-\bibitem[Kilmer, Braman, Hao]{kbh}
-MISHA E. KILMER, KAREN BRAMAN, AND NING HAO.
-\newblock THIRD ORDER TENSORS AS OPERATORS ON MATRICES: A
-THEORETICAL AND COMPUTATIONAL FRAMEWORK WITH
-APPLICATIONS IN IMAGING
+\bibitem[1]{kilmer-braman-hao}
+Misha E. Kilmer, Karen Braman, Ning Hao.
+\newblock Third Order Tensors as Operators on Matrices: A
+Theoretical and Computational Framework with
+Applications in Imaging
+
+\bibitem[2]{kilmer-martin}
+Misha E. Kilmer, Carls D. Martin
+\newblock Factorization Strategies for Third-order Tensors
  
 \end{thebibliography}
 
