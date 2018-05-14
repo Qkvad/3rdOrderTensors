@@ -30,7 +30,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Title $\bullet$ May 2018} % Custom header text
+\fancyhead[C]{Third Order Tensors with Application $\bullet$ May 2018} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
@@ -56,12 +56,12 @@
 
 \pretitle{\begin{center}\Huge\bfseries} % Article title formatting
 \posttitle{\end{center}} % Article title closing formatting
-\title{Title} % Article title
+\title{Third Order Tensors with Application} % Article title
 
 \author{%
 \textsc{Ivan \v{C}eh}\\% \\[1ex] 
 \normalsize Computer Science \\
-\normalsize \href{mailto:cehmail@gmail.com}{cehmail@gmail.com} 
+\normalsize \href{mailto:ivan.ceh1234@gmail.com}{ivan.ceh1234@gmail.com} 
 \and
 \textsc{Petra Br\v{c}i\'c}\\% \\[1ex] 
 \normalsize Applied Mathematics \\
@@ -76,7 +76,7 @@
 \renewcommand{\maketitlehookd}{%
 \noindent \textbf{\\Abstract:} Operations with tensors, or multiway arrays, have become increasingly prevalent in recent years. In this paper, we explore a theoretical framework for manipulating  such objects and derive basic operators on them, keeping the structure closed and also robust, in a sense that operators on lower dimensions can be generalized in this higher order framework. Also, we present application of third-order tensors on two examples; image deblurring and face recognition.
 \\\\
-\textbf{Keywords:} third order tensor, t-product, t-SVD, t-CG, deblurring, face recognition.\\
+\textbf{Keywords:} third order tensor, t-product, t-SVD, t-CG, deblurring, face recognition.
 }
 
 
@@ -116,10 +116,10 @@ In order to define tensor multiplication, we now present some conversions betwee
 \[
 \code{circ}(\mathcal{A}) =
   \begin{bmatrix}
-    \mathcal{A}^{(1)} & \mathcal{A}^{(n)} & \mathcal{A}^{(n-1)} & \dots & \mathcal{A}^{(2)} \\
-    \mathcal{A}^{(2)} & \mathcal{A}^{(1)} & \mathcal{A}^{(n)}   &  \dots  & \mathcal{A}^{(3)} \\
-    \vdots            & \vdots            & \vdots              &  \ddots & \vdots \\
-    \mathcal{A}^{(n)} & \mathcal{A}^{(n-1)} & \mathcal{A}^{(n-2)}   &  \dots & \mathcal{A}^{(1)} 
+    \mathcal{A}^{(1)} & \mathcal{A}^{(n)} & \dots & \mathcal{A}^{(2)} \\
+    \mathcal{A}^{(2)} & \mathcal{A}^{(1)} &  \dots  & \mathcal{A}^{(3)} \\
+    \vdots            & \vdots            &  \ddots & \vdots \\
+    \mathcal{A}^{(n)} & \mathcal{A}^{(n-1)} &  \dots & \mathcal{A}^{(1)} 
   \end{bmatrix}
 \]
 
