@@ -177,15 +177,17 @@ It is natural to observe tensors as operators on "twisted matrices", e.g. $m \ti
 
 \section{Image Deblurring}
 In this section, we present the application of previously established theoretical framework around third-order tensors to the problem of image deblurring.\\
+
 Generally, image deblurring problem is set as follows: Find the matrix $X$ representing the original image, having available the matrix $B = A X$, where $A$ is some blurring operator.\\
-The problem is easily translated into the world of tensors and we have to find a twisted matrix $\overrightarrow{\mathcal{X}} \in R^{l \times 1 \times n}$, having $\overrightarrow{\mathcal{B}}$ and tensor operator $\mathcal{A}$ such that $\mathcal{A} \ast \overrightarrow{\mathcal{X}} = \overrightarrow{\mathcal{B}}$.
+The problem is easily translated into the world of tensors and we have to find a twisted matrix $\overrightarrow{\mathcal{X}} \in R^{l \times 1 \times n}$, having $\overrightarrow{\mathcal{B}}$ and tensor operator $\mathcal{A}$ such that $\mathcal{A} \ast \overrightarrow{\mathcal{X}} = \overrightarrow{\mathcal{B}}$.\\
 
 For the purposes of our demonstration, we will use rectangular images of size $m \times m$. First we need to create a tensor blurring operator $\mathcal{A} \in \mathbb{R}^{m \times m \times n}$. As suggested in \cite{kilmer-braman-hao} and \cite{kilmer-martin}, those blurring operators should have a specific structure of \textit{block Toeplitz} matrices with values obtained by \textit{Gaussian point spread function} (PSF).
 
-We obtain out blurred tensor $\overrightarrow{\mathcal{B}}$ by applying the descibed blurring operator $\mathcal{A}$ on twisted original image $\overrightarrow{\mathcal{X}}$.
+We obtain out blurred tensor $\overrightarrow{\mathcal{B}}$ by applying the descibed blurring operator $\mathcal{A}$ on twisted original image $\overrightarrow{\mathcal{X}}$.\\
 
-To find an approximation of original image, we use the \code{tCG} algorithm implemented in Octave as:\\
-$[\overrightarrow{\mathcal{R}}_0,a] = \code{Normalize}(\overrightarrow{\mathcal{B}})$\\
+To find an approximation of original image, we use our \code{tCG} algorithm implemented in Octave whose detailed description is given below.\\
+
+\noindent $[\overrightarrow{\mathcal{R}}_0,a] = \code{Normalize}(\overrightarrow{\mathcal{B}})$\\
 $\overrightarrow{\mathcal{P}}_0 = \overrightarrow{\mathcal{R}}_0$\\
 $\code{for}\ i=1:...$\\
 \indent $c = (\overrightarrow{\mathcal{P}}^T \ast \mathcal{A} \ast \overrightarrow{\mathcal{P}})^{-1} \ast (\overrightarrow{\mathcal{R}}^T \ast \overrightarrow{\mathcal{R}})$\\
