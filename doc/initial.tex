@@ -86,8 +86,8 @@
 
 % Print the title and table of contents
 \maketitle
-%\tableofcontents
-%\newpage
+\tableofcontents
+\newpage
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS
@@ -103,7 +103,7 @@ A tensor is a multi-dimensional array of numbers. For example, we could say that
 In this section, we will first describe notation that is convenient for manipulating third-order tensors and which will be used throughout the paper. Also, we define basic operations on tensors (multiplication, inverse, transpose) which lead us to tensors factorization algorithms and solvers; t-SVD and t-CG.
 
 \subsection{Notation and Conversions}
-Each third-order tensor $\mathcal{A} \in \mathbb{R}^{l \times m \times n}$ can be viewed as $n$ $l \times m$ matrices stacked upon eachother. Firthermore, it can also be viewed as a $l \times m$ matrix of vectors of length $n$. It is convenient to break tensor into "slices" and "tubal elements".
+Each third-order tensor $\mathcal{A} \in \mathbb{R}^{l \times m \times n}$ can be viewed as $n$ $l \times m$ matrices stacked upon eachother. Furthermore, it can also be viewed as a $l \times m$ matrix of vectors of length $n$. It is convenient to break tensor into "slices" and "tubal elements".
 \begin{defn} Let $\mathcal{A} \in \mathbb{R}^{l \times m \times n}$. We introduce the following notation:
 \begin{itemize}
 	\item $i$-th \textbf{frontal slice} $\mathcal{A}^{(i)} \equiv \mathcal{A}(:,:,i)$
@@ -179,12 +179,12 @@ It is natural to observe tensors as operators on "twisted matrices", e.g. $m \ti
 In this section, we present the application of previously established theoretical framework around third-order tensors to the problem of image deblurring.\\
 
 Generally, image deblurring problem is set as follows: Find the matrix $X$ representing the original image, having available the matrix $B = A X$, where $A$ is some blurring operator.\\
+
 The problem is easily translated into the world of tensors and we have to find a twisted matrix $\overrightarrow{\mathcal{X}} \in R^{l \times 1 \times n}$, having $\overrightarrow{\mathcal{B}}$ and tensor operator $\mathcal{A}$ such that $\mathcal{A} \ast \overrightarrow{\mathcal{X}} = \overrightarrow{\mathcal{B}}$.\\
 
-For the purposes of our demonstration, we will use rectangular images of size $m \times m$. First we need to create a tensor blurring operator $\mathcal{A} \in \mathbb{R}^{m \times m \times n}$. As suggested in \cite{kilmer-braman-hao} and \cite{kilmer-martin}, those blurring operators should have a specific structure of \textit{block Toeplitz} matrices with values obtained by \textit{Gaussian point spread function} (PSF).
+For the purposes of our demonstration, we will use rectangular images of size $m \times m$. First we need to create a tensor blurring operator $\mathcal{A} \in \mathbb{R}^{m \times m \times n}$. As suggested in \cite{kilmer-braman-hao} and \cite{kilmer-martin}, those blurring operators should have a specific structure of \textit{block Toeplitz} matrices with values obtained by \textit{Gaussian point spread function} (PSF).\\
 
-We obtain out blurred tensor $\overrightarrow{\mathcal{B}}$ by applying the descibed blurring operator $\mathcal{A}$ on twisted original image $\overrightarrow{\mathcal{X}}$.\\
-
+We obtain out blurred tensor $\overrightarrow{\mathcal{B}}$ by applying the descibed blurring operator $\mathcal{A}$ on twisted original image $\overrightarrow{\mathcal{X}}$.
 To find an approximation of original image, we use our \code{tCG} algorithm implemented in Octave whose detailed description is given below.\\
 
 \noindent $[\overrightarrow{\mathcal{R}}_0,a] = \code{Normalize}(\overrightarrow{\mathcal{B}})$\\
@@ -198,19 +198,30 @@ $\code{for}\ i=1:...$\\
 \code{end}\\
 $\overrightarrow{\mathcal{X}} = \overrightarrow{\mathcal{X}} \ast a$.\\
 
-\noindent Our results can be seen in Figure \ref{fig:resdeblur}
+\noindent Our results can be seen in Figure \ref{fig:resdeblur}\\
+
 \begin{figure}[H]
 \includegraphics[width=0.5\textwidth]{res}
-\caption{Results with $\sigma=2$}
+\caption{Results with $\sigma=2$. Numeber of iterations for tCG is 6.}
 \label{fig:resdeblur}
 \end{figure}
-\subsection{Subsection}
-Based on...
-
 
 \section{Face Recognition}
-As we could have seen in...
+We used AT\&T training set which consists of $400$ gray-scale images of size $112 \times 92$: $10$ photos of $40$ different persons. We divided them to training set with $7$ images of each person and test set with $3$ images of each person. For each person we create a tensor of size $112 \times 7 \times 92$ where images are placed as lateral slices.
 
+We used the truncated t-SVD with first $k$ slices of tensor $U$ and used it to calculate the distance between each image $A_j$ in the test set and its orthogonal projection $U_k U_k^T A_j$. We suppose each image in test set should have the lowest distance between its ortogonal projection created by tensor of images of the same person. We tested this for different values of $k$.\\
+
+\begin {tabular}{|r|l|}
+\hline
+k & accuracy \\
+\hline
+2 & 25\% \\
+3 & 35\% \\
+4 & 46.67\% \\
+5 & 55.83\% \\
+6 & 77.5\% \\
+\hline
+\end {tabular}
 
 %------------------------------------------------
 
