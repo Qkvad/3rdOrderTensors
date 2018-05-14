@@ -3,7 +3,7 @@ function [C] = tproduct (A, B)
   [p1,m,n1] = size(B);
   assert (p==p1 && n==n1, "Tensor dimensions do not match!");
   
-  C = foldn(circ(A)*matvec(B),n);
+  C = foldn(circ(A)*double(matvec(B)),n);
 %  else
 %    C = zeros(l,m,n);
 %    for i=1:l
