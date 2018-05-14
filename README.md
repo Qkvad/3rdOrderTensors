@@ -1,1 +1,1 @@
-# Image deblurring
+# Third-Order Tensors with Applications
