@@ -100,7 +100,7 @@ A tensor is a multi-dimensional array of numbers. For example, we could say that
 \indent In sections that follow, we first introduce the basic notions and definitions of this new framework. We present methods which will be used in applictions and continue with two examples (image deblurring and face recognition), for which our Octave code can be found at our \hyperref[https://github.com/Qkvad/3rdOrderTensors]{GitHub repository}\footnote{https://github.com/Qkvad/3rdOrderTensors}.
 
 \section{Theoretical Framework}
-In this section, we will first describe notation that is convenient for manipulating third-order tensors and which will be used throughout the paper. Also, we define basic operations on tensors such as multiplication,...
+In this section, we will first describe notation that is convenient for manipulating third-order tensors and which will be used throughout the paper. Also, we define basic operations on tensors (multiplication, inverse, transpose) which lead us to tensors factorization algorithms and solvers; t-SVD and t-CG.
 
 \subsection{Notation and Conversions}
 Each third-order tensor $\mathcal{A} \in \mathbb{R}^{l \times m \times n}$ can be viewed as $n$ $l \times m$ matrices stacked upon eachother. Firthermore, it can also be viewed as a $l \times m$ matrix of vectors of length $n$. It is convenient to break tensor into "slices" and "tubal elements".
