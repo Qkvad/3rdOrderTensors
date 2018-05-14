@@ -4,12 +4,13 @@ function [X,P,R]=tCG(A,B)
     X=ones(1,1,nA);
     [R,a]=normalize(B);
     P=R;
-    for i=1:nA
-      c=tproduct(multinv(tproduct(tproduct(transp(P),A),P)),tproduct(transp(R),R));
+    for i=1:10
+      c=tproduct(tinv(tproduct(tproduct(transp(P),A),P)),tproduct(transp(R),R));
       X=X+tproduct(P,c);
+      showTimg(X);
       Rold=tproduct(transp(R),R);
       R=R-tproduct(A,tproduct(P,c));
-      d=tproduct(multinv(Rold),tproduct(transp(R),R));
+      d=tproduct(tinv(Rold),tproduct(transp(R),R));
       P=R+tproduct(P,d);      
     end
   else
