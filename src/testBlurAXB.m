@@ -1,13 +1,10 @@
 function testBlurAXB(impath,sigma)
+  %sigma...blur parameter
+  
   % load image and convert it to grayscale
   img = imread(impath);
   img = rgb2gray(img);
   [m,n] = size(img); 
-  
-  % show image
-  figure(1);
-  imshow(img);
-  pause(1);
   
   % twist image to m x 1 x n shape
   X = twist(img);
@@ -17,16 +14,25 @@ function testBlurAXB(impath,sigma)
   
   % apply blur to image
   B = tproduct(A,X);
-  
-  % show blurred image
-  showTimg(B);
+  imgB = squeeze(B);
+  imgBB = mat2gray(imgB,[0 255]);
   
   % deblurr
   [X,P,R] = tCG(A,B);
+  imgX = squeeze(X);
+  imgXX = mat2gray(imgX,[0 255]);
   
-  % show deblurred image
-  showTimg(X);
+  % create the subplots
+  pause(1);
+   figure;
+   subplot(2,2,1); imshow(abs(img)); title('Original image');
+   subplot(2,2,2); imshow(abs(imgBB)); title('Blured image');
+   subplot(2,2,3); imshow(abs(imgXX)); title('Approximation by tCG');
+   
+   
+   
+   
   
-  
+end
   
   
